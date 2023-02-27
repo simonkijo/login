@@ -1,5 +1,5 @@
 package com.simonkijo.login;
 
 public class registerController {
-    //HELLO KIJO
+    //HELLO KIJO KIJO
 }
