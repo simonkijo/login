@@ -2,10 +2,13 @@ package com.simonkijo.login;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -48,7 +51,17 @@ public class loginController {
 
     @FXML
     void btnRegisterAction(ActionEvent event) {
+        try {
+            Stage registerStage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("register.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            registerStage.initStyle(StageStyle.DECORATED);
+            registerStage.setScene(scene);
+            registerStage.show();
 
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
     void loginValidate(){
         DatabaseConnection connectNow = new DatabaseConnection();
