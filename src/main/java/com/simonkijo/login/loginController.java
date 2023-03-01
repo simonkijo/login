@@ -54,7 +54,7 @@ public class loginController {
         try {
             Stage registerStage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("register.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 661, 501);
             registerStage.initStyle(StageStyle.DECORATED);
             registerStage.setScene(scene);
             registerStage.show();

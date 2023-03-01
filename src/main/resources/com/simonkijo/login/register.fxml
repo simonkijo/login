@@ -22,33 +22,38 @@
          <font>
             <Font name="Verdana" size="12.0" />
          </font></Label>
-      <Label layoutX="179.0" layoutY="185.0" prefHeight="33.0" prefWidth="128.0" text="LAST NAME">
+      <Label layoutX="179.0" layoutY="192.0" prefHeight="33.0" prefWidth="128.0" text="LAST NAME">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="179.0" layoutY="218.0" prefHeight="33.0" prefWidth="128.0" text="USERNAME">
+      <Label layoutX="179.0" layoutY="225.0" prefHeight="33.0" prefWidth="128.0" text="USERNAME">
          <font>
             <Font name="Verdana" size="12.0" />
          </font></Label>
-      <Label layoutX="179.0" layoutY="252.0" prefHeight="33.0" prefWidth="128.0" text="PASSWORD" />
-      <Label layoutX="179.0" layoutY="285.0" prefHeight="33.0" prefWidth="128.0" text="CONFIRM PASSWORD" />
+      <Label layoutX="179.0" layoutY="259.0" prefHeight="33.0" prefWidth="128.0" text="PASSWORD" />
+      <Label layoutX="179.0" layoutY="292.0" prefHeight="33.0" prefWidth="128.0" text="CONFIRM PASSWORD" />
       <TextField fx:id="fname" layoutX="311.0" layoutY="163.0" />
-      <TextField fx:id="lname" layoutX="311.0" layoutY="189.0" />
-      <TextField fx:id="uname" layoutX="311.0" layoutY="222.0" />
-      <PasswordField fx:id="pword" layoutX="311.0" layoutY="256.0" />
-      <PasswordField fx:id="cpword" layoutX="311.0" layoutY="289.0" />
-      <Button fx:id="btnRegister_" layoutX="201.0" layoutY="341.0" mnemonicParsing="false" onAction="#btnRegisterAction_" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #FF2200;" text="REGISTER" textFill="#f8f7f7">
+      <TextField fx:id="lname" layoutX="311.0" layoutY="196.0" />
+      <TextField fx:id="uname" layoutX="311.0" layoutY="229.0" />
+      <PasswordField fx:id="pword" layoutX="311.0" layoutY="263.0" />
+      <PasswordField fx:id="cpword" layoutX="311.0" layoutY="296.0" />
+      <Button fx:id="btnRegister_" layoutX="201.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnRegisterAction_" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #FF2200;" text="REGISTER" textFill="#f8f7f7">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnClose_" layoutX="354.0" layoutY="341.0" mnemonicParsing="false" onAction="#btnCloseAction_" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #FF2200;" text="CLOSE" textFill="#f5f2f2">
+      <Button fx:id="btnClose_" layoutX="354.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnCloseAction_" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #FF2200;" text="CLOSE" textFill="#f5f2f2">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="registerSuccess" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="127.0" text="user registered successfully" textAlignment="CENTER" textFill="#0acd14">
+      <Label fx:id="registerSuccess" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="127.0" textAlignment="CENTER" textFill="#0acd14">
+         <font>
+            <Font name="Verdana Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="passWordMatch" alignment="CENTER" layoutX="229.0" layoutY="345.0" textAlignment="CENTER" textFill="#f21e1e">
          <font>
             <Font name="Verdana Bold Italic" size="14.0" />
          </font>

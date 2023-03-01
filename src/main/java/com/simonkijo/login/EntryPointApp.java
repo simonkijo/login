@@ -12,7 +12,7 @@ public class EntryPointApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(EntryPointApp.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 661, 501);
         stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
         stage.show();
