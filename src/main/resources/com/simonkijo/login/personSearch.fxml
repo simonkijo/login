@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.simonkijo.login.personSearchController">
    <children>
-      <TableView layoutY="50.0" prefHeight="450.0" prefWidth="900.0">
+      <TableView fx:id="personSearchTableView" layoutY="50.0" prefHeight="450.0" prefWidth="900.0">
         <columns>
           <TableColumn fx:id="FN_tableColumn" prefWidth="100.0" text="First Name" />
           <TableColumn fx:id="LN_tableColumn" prefWidth="100.0" text="Last Name" />
