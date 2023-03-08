@@ -15,23 +15,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class loginController {
-    @FXML
-    private Button btnCancel;
-
-    @FXML
-    private Button btnLogin;
-
-    @FXML
-    private Button btnRegister;
-
-    @FXML
-    private TextField passWord;
-
-    @FXML
-    private Label smsStatus;
-
-    @FXML
-    private TextField userName;
+    @FXML private Button btnCancel;@FXML private Button btnLogin;@FXML private Button btnRegister;
+    @FXML private TextField passWord;@FXML private TextField userName;
+    @FXML private Label smsStatus;
+    private String uName,pWord;
 
     @FXML
     void btnCancelAcction(ActionEvent event) {
@@ -41,6 +28,7 @@ public class loginController {
 
     @FXML
     void btnLoginAction(ActionEvent event) {
+
         if(!userName.getText().isBlank() && !passWord.getText().isBlank()){
             //smsStatus.setText("thanks for login");
             loginValidate();
@@ -67,7 +55,9 @@ public class loginController {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection c = connectNow.getConnection();
 
-        String query = "SELECT `id` FROM `login` WHERE `userName`='"+userName.getText()+"' AND `passWord`='"+passWord.getText()+"'";
+        uName = userName.getText();
+        pWord = passWord.getText();
+        String query = "SELECT `userName` FROM `login` WHERE `userName`='"+uName+"' AND `passWord`='"+pWord+"'";
 
         try{
 
@@ -77,10 +67,23 @@ public class loginController {
                 ResultSet resultSet = statement.executeQuery(query);
 
                 if(resultSet.next()){
-                    smsStatus.setText(resultSet.getString("id"));
-                    System.out.println(" ROW: "+resultSet.getString("id")+"\n USER: "+userName.getText()+"\n PASS: "+passWord.getText());
+                    smsStatus.setText(resultSet.getString("userName"));
+                    System.out.println(" ROW: " + resultSet.getString("userName") + "\n USER: " + uName + "\n PASS: " + pWord);
+                    //opens personSearch stage
+                    try {
+                        Stage personSearchStage = new Stage();
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personSearch.fxml"));
+                        Scene scene = new Scene(fxmlLoader.load(), 900, 500);
+                        personSearchStage.initStyle(StageStyle.DECORATED);
+                        personSearchStage.setScene(scene);
+                        personSearchStage.show();
+
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
                 }else{
-                    smsStatus.setText(" Invalid \n username or password");
+                    smsStatus.setText(" Invalid \nusername or password \nNew User !!!!! please register.\n(By clicking 'Register')");
                 }
             }else{
                 //System.out.println("kijo disconnected : "+connectNow.dbConnectError);

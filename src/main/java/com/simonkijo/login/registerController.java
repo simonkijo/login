@@ -54,6 +54,7 @@ public class registerController {
                 Statement statement = c.createStatement();
                 statement.executeUpdate(query);
                 registerSuccess.setText("User Registered Successfully");
+                passWordMatch.setText("");
             }else{
                 registerSuccess.setText("MySQL Server is offline,\nPlease turn on");
             }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.simonkijo.login.personSearchController">
+   <children>
+      <TableView layoutY="50.0" prefHeight="450.0" prefWidth="900.0">
+        <columns>
+          <TableColumn fx:id="FN_tableColumn" prefWidth="100.0" text="First Name" />
+          <TableColumn fx:id="LN_tableColumn" prefWidth="100.0" text="Last Name" />
+            <TableColumn fx:id="UN_tableColumn" prefWidth="86.0" text="User Name" />
+            <TableColumn fx:id="PW_tableColumn" prefWidth="109.0" text="Password" />
+            <TableColumn fx:id="DESC_tableColumn" prefWidth="501.0" text="Descriptions" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="12.0" prefHeight="32.0" prefWidth="132.0" text="Search Person" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchPersonET" layoutX="146.0" layoutY="16.0" prefHeight="25.0" prefWidth="623.0" promptText="Type Person Name" />
+   </children>
+</Pane>
