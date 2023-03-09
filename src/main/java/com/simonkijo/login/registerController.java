@@ -2,10 +2,7 @@ package com.simonkijo.login;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
@@ -19,7 +16,9 @@ public class registerController {
     private PasswordField cpword; @FXML private PasswordField pword;
     @FXML
     private TextField fname; @FXML private TextField lname; @FXML private TextField uname;
-    private String fname_,lname_,uname_,pword_,cpword_;
+    private String fname_,lname_,uname_,pword_,cpword_,desc_;
+    @FXML
+    private TextArea desc_textArea;
     @FXML
     void btnCloseAction_(ActionEvent event) {
         Stage stage = (Stage)btnClose_.getScene().getWindow();
@@ -31,12 +30,14 @@ public class registerController {
         validateRegistration();
     }
     public void validateRegistration(){
-        fname_ = fname.getText();lname_=lname.getText();uname_=uname.getText();pword_=pword.getText();cpword_=cpword.getText();
-        if(!fname_.isBlank()&&!lname_.isBlank()&&!uname_.isBlank()&&!pword_.isBlank()&&!cpword_.isBlank()){
+        fname_ = fname.getText();lname_=lname.getText();uname_=uname.getText();
+        pword_=pword.getText();cpword_=cpword.getText();
+        desc_ = desc_textArea.getText();
+        if(!fname_.isBlank()&&!lname_.isBlank()&&!uname_.isBlank()&&!pword_.isBlank()&&!cpword_.isBlank()&&!desc_.isBlank()){
             if(pword_.equals(cpword_)){
                 //registerSuccess.setText("you entered some values!!!!");
                 //System.out.println("sawa password: "+pword_+"\n sawa confirm password: "+cpword_);
-                registerUser(fname_,lname_,uname_,pword_);
+                registerUser(fname_,lname_,uname_,pword_,desc_);
             }else{
                 passWordMatch.setText("Password does not match ");
                 //System.out.println("c password: "+pword_+"\n c confirm password: "+cpword_);
@@ -45,10 +46,10 @@ public class registerController {
             registerSuccess.setText("Please all fields must be filled.");
         }
     }
-    public void registerUser(String f,String l,String u,String p){
+    public void registerUser(String f,String l,String u,String p,String d){
         DatabaseConnection connectDB = new DatabaseConnection();
         Connection c = connectDB.getConnection();
-        String query = "INSERT INTO `login`(`id`,`firstName`,`lastName`,`userName`,`passWord`) VALUES(NULL,'"+f+"','"+l+"','"+u+"','"+p+"')";
+        String query = "INSERT INTO `login`(`id`,`firstName`,`lastName`,`userName`,`passWord`,`description`) VALUES(NULL,'"+f+"','"+l+"','"+u+"','"+p+"','"+d+"')";
         try{
             if(connectDB.dbConnectError=="connected") {
                 Statement statement = c.createStatement();
